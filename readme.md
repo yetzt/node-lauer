@@ -1,11 +1,38 @@
 # Local Authentication Ergo
 
-Tiny user management with SQLite.
+Tiny user management with SQLite. Lauer performs all the usual operations: creating users, login, verification, password reset and storing data.
+It's lightweigt and portable. 
 
 ## Install
 
 ```
 npm install lauer
+```
+
+## Example
+
+```javascript
+
+var lauer = require("lauer");
+
+var users = new lauer({db: "/tmp/lauer.sqlite"});
+
+users.create({
+	username: "user1",
+	email: "user@example.com",
+	password: "gu3ssme!1",
+	verfified: 1,
+}, function(err, result){
+
+	console.log(err, result);
+
+	users.login("user1", "gu3ssme!1", function(err, result){
+		
+		console.log(err, result);
+
+	});
+	
+});
 ```
 
 ## API
@@ -169,13 +196,3 @@ Change user data.
 ## License
 
 [Public Domain](http://unlicense.org/UNLICENSE).
-
-
-
-
-
-
-
-
-
-
