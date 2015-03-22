@@ -1,0 +1,14 @@
+{
+  "name": "lauer",
+  "version": "0.1.0",
+  "description": "Local Authentication Ergo",
+  "main": "lauer.js",
+  "author": "yetzt <node@yetzt.me> (https://yetzt.me/)",
+  "repository": "https://github.com/yetzt/node-lauer",
+  "license": "Public Domain",
+  "dependencies": {
+    "debug": "^2.1.2",
+    "slug": "^0.8.0",
+    "sqlite3": "^3.0.5"
+  }
+}
