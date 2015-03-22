@@ -4,11 +4,27 @@
   "description": "Local Authentication Ergo",
   "main": "lauer.js",
   "author": "yetzt <node@yetzt.me> (https://yetzt.me/)",
-  "repository": "https://github.com/yetzt/node-lauer",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yetzt/node-lauer.git"
+  },
   "license": "Public Domain",
   "dependencies": {
     "debug": "^2.1.2",
     "slug": "^0.8.0",
     "sqlite3": "^3.0.5"
+  },
+  "keywords": [
+    "user",
+    "password",
+    "user management",
+    "authentication",
+    "auth",
+    "local auth",
+    "local authentication",
+    "sqlite"
+  ],
+  "bugs": {
+    "url": "https://github.com/yetzt/node-lauer/issues"
   }
 }
