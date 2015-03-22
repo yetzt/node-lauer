@@ -51,13 +51,17 @@ lauer.prototype.init = function(fn){
 		if (ex) {
 			// open database
 			debug("opening database");
-			self.db = new sqlite3.Database(self.opts.db, fn);
+			self.db = new sqlite3.Database(self.opts.db, function(err){
+				fn(err, false);
+			});
 		} else {
 			// create database
 			debug("creating new database");
 			self.db = new sqlite3.Database(self.opts.db, function(err){
 				if (err) return fn(err);
-				self.db.run('CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, "username" TEXT NOT NULL UNIQUE, "password" TEXT NOT NULL, "salt" TEXT NOT NULL, "email" TEXT UNIQUE NOT NULL, "verification" TEXT UNIQUE, "verified" INTEGER NOT NULL, "created" INTEGER, "updated" INTEGER, "lastlogin" INTEGER, "level" INTEGER, "data" BLOB);', fn);
+				self.db.run('CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL UNIQUE, "username" TEXT NOT NULL UNIQUE, "password" TEXT NOT NULL, "salt" TEXT NOT NULL, "email" TEXT UNIQUE NOT NULL, "verification" TEXT UNIQUE, "verified" INTEGER NOT NULL, "created" INTEGER, "updated" INTEGER, "lastlogin" INTEGER, "level" INTEGER, "data" BLOB);', function(err){
+					fn(err, true);
+				});
 			});
 		};
 	});

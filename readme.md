@@ -37,7 +37,7 @@ users.create({
 
 ## API
 
-### lauer(opts, function(err){})
+### lauer(opts, function(err, new){})
 
 Create a new instance of `Lauer`. `opts`:
 
@@ -47,6 +47,8 @@ Create a new instance of `Lauer`. `opts`:
 	db: "lauer.sqlite"  // path to sqlite database
 }
 ```
+
+`new` is true, if an empty database was created.
 
 ### lauer.salt()
 

@@ -1,6 +1,6 @@
 {
   "name": "lauer",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Local Authentication Ergo",
   "main": "lauer.js",
   "author": "yetzt <node@yetzt.me> (https://yetzt.me/)",
