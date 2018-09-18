@@ -4,7 +4,7 @@ var sqlite3 = require("sqlite3").verbose();
 var debug = require("debug")("lauer");
 var crypto = require("crypto");
 var path = require("path");
-var slug = require("slug");
+var slug = require("mollusc");
 var fs = require("fs");
 
 function lauer(opts, fn){
